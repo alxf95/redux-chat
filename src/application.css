@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+}
+
+.left-scene {
+  width: 25%;
+  height: 100vh;
+  background-color: #F4F4F4;
+  padding: 20px 0 0 50px;
+}
+
+.right-scene {
+  width: 75%;
+  padding-left: 50px;
+  height: 100vh;
+}
+
+.right-scene h1 {
+  padding: 30px 0 20px 0;
+}
+
+.message-list {
+  position: relative;
+  height: 100%;
+}
+
+.messages {
+  height: 65%;
+  overflow: scroll;
+}
+
+.message-form {
+  position: absolute;
+  width: 80%;
+  bottom: 40px;
+}
+
+.channel {
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+}
