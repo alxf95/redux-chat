@@ -27,7 +27,7 @@ class MessageForm extends Component {
     event.preventDefault();
 
     if (this.state.term.length > 0) {
-      this.props.postMessage(this.props.selectedChannel, this.props.currentUser, this.state.term);
+      this.props.postMessage(this.props.channelFromParams, this.props.currentUser, this.state.term);
     }
     
     this.setState({ term: '' });
@@ -50,10 +50,7 @@ class MessageForm extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    currentUser: state.currentUser,
-    selectedChannel: state.selectedChannel
-  };
+  return { currentUser: state.currentUser };
 };
 
 const mapDispatchToProps = dispatch => {

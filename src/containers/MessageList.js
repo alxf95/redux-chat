@@ -14,9 +14,9 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchMessages(this.props.selectedChannel);
+    this.props.fetchMessages(this.props.channelFromParams);
     this.interval = setInterval(() => {
-      this.props.fetchMessages(this.props.selectedChannel);
+      this.props.fetchMessages(this.props.channelFromParams);
     }, 3000);
   }
   
@@ -45,12 +45,12 @@ class MessageList extends Component {
   render() {
     return (
       <div className="message-list">
-        <h1>{this.props.selectedChannel}</h1>
+        <h1>{this.props.channelFromParams}</h1>
         <div className="messages" ref={this.messagesRef}>
           {this.renderMessages()}
         </div>
         <div className="message-form">
-          <MessageForm />
+          <MessageForm channelFromParams={this.props.channelFromParams} />
         </div>
       </div>
     );
@@ -63,10 +63,7 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = state => {
-  return { 
-    messages: state.messages,
-    selectedChannel: state.selectedChannel
-  };
+  return { messages: state.messages };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageList);

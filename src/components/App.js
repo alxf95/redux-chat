@@ -3,14 +3,14 @@ import MessageList from '../containers/MessageList';
 import ChannelList from '../containers/ChannelList';
 import '../application.css';
 
-const App = () => {
+const App = props => {
   return (
     <div className="ui app">
       <div className="left-scene">
-        <ChannelList />
+        <ChannelList channelFromParams={props.match.params.channel} />
       </div>
       <div className="right-scene">
-        <MessageList />
+        <MessageList channelFromParams={props.match.params.channel} />
       </div>
     </div>
   );

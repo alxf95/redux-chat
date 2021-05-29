@@ -1,6 +1,5 @@
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const POST_MESSAGE = 'POST_MESSAGE';
-export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 
 export const fetchMessages = channel => {
   const messages = fetch(`https://wagon-chat.herokuapp.com/${channel}/messages`)
@@ -23,7 +22,3 @@ export const postMessage = (channel, author, content) => {
   
   return { type: POST_MESSAGE, payload: message };
 };
-
-export const selectChannel = channel => {
-  return { type: SELECT_CHANNEL, payload: channel };
-}
